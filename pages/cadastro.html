@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <title>Cadastro | WeekndCar</title>
+  <link href="../assets/css/theme.css" rel="stylesheet">
+</head>
+<body>
+  <header id="navbar"></header>
+  <main class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form id="form-cliente" class="ficha p-4" novalidate>
+          <h1 id="titulo" class="h2 mb-1">Crie seu cadastro</h1>
+          <p id="subtitulo" class="mb-4">Com o cadastro, você reserva um clássico para o fim de semana.</p>
+          <div id="msg" role="alert" class="alert d-none"></div>
+
+          <div class="row g-3">
+            <div class="col-12">
+              <label class="form-label" for="nome">Nome completo</label>
+              <input class="form-control" id="nome" name="nome" autocomplete="name" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="email">E-mail</label>
+              <input class="form-control" id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="senha">Senha (mínimo de 6 caracteres)</label>
+              <input class="form-control" id="senha" name="senha" type="password" autocomplete="new-password" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="rg">RG</label>
+              <input class="form-control" id="rg" name="rg" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="cpf">CPF</label>
+              <input class="form-control" id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="cep">CEP</label>
+              <div class="input-group">
+                <input class="form-control" id="cep" name="cep" inputmode="numeric" placeholder="30000-000">
+                <button class="btn btn-outline-dark" id="btn-cep" type="button">Buscar endereço</button>
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="endereco">Endereço</label>
+              <input class="form-control" id="endereco" name="endereco" autocomplete="street-address" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="profissao">Profissão</label>
+              <input class="form-control" id="profissao" name="profissao" required>
+            </div>
+          </div>
+
+          <h2 class="h5 mt-4">Empregadores e rendimentos</h2>
+          <p class="small mb-2">Informe até 3 empregadores.</p>
+          <div id="rendimentos" class="vstack gap-2"></div>
+          <button type="button" id="btn-add-renda" class="btn btn-outline-dark btn-sm mt-2">Adicionar empregador</button>
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <button id="btn-salvar" class="btn btn-wc" type="submit">Criar cadastro</button>
+            <button id="btn-excluir" class="btn btn-outline-danger d-none" type="button">Excluir cadastro</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../assets/js/controllers/cliente-controller.js"></script>
+</body>
+</html>

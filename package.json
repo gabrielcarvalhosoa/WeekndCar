@@ -1,0 +1,11 @@
+{
+  "name": "weekndcar",
+  "version": "0.1.0",
+  "description": "WeekndCar - aluguel de carros clássicos para o fim de semana (LAB02 DIW)",
+  "scripts": {
+    "api": "json-server --watch db.json --port 3000"
+  },
+  "devDependencies": {
+    "json-server": "0.17.4"
+  }
+}

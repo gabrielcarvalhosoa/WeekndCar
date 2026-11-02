@@ -1,0 +1,297 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Marina Albuquerque",
+      "email": "marina@email.com",
+      "senha": "123456",
+      "rg": "MG-12.345.678",
+      "cpf": "529.982.247-25",
+      "endereco": "Rua da Bahia, 1200, Centro, Belo Horizonte, MG",
+      "profissao": "Arquiteta",
+      "rendimentos": [
+        { "entidadeEmpregadora": "Estúdio Alterosa Arquitetura", "valor": 9500 },
+        { "entidadeEmpregadora": "Prefeitura de Belo Horizonte", "valor": 3200 }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Rafael Drummond",
+      "email": "rafael@email.com",
+      "senha": "123456",
+      "rg": "MG-98.765.432",
+      "cpf": "168.995.350-09",
+      "endereco": "Av. Afonso Pena, 3000, Savassi, Belo Horizonte, MG",
+      "profissao": "Engenheiro de software",
+      "rendimentos": [
+        { "entidadeEmpregadora": "Mineira Tech", "valor": 14000 }
+      ]
+    }
+  ],
+  "agentes": [
+    {
+      "id": 1,
+      "tipo": "empresa",
+      "razaoSocial": "WeekndCar Savassi Ltda",
+      "cnpj": "12.345.678/0001-90",
+      "email": "savassi@weekndcar.com",
+      "senha": "123456"
+    },
+    {
+      "id": 2,
+      "tipo": "empresa",
+      "razaoSocial": "Locadora Alterosa Clássicos",
+      "cnpj": "23.456.789/0001-01",
+      "email": "contato@alterosaclassicos.com",
+      "senha": "123456"
+    },
+    {
+      "id": 3,
+      "tipo": "banco",
+      "razaoSocial": "Banco Mineirão S.A.",
+      "cnpj": "34.567.890/0001-12",
+      "email": "credito@bancomineirao.com",
+      "senha": "123456"
+    },
+    {
+      "id": 4,
+      "tipo": "banco",
+      "razaoSocial": "Banco Inconfidência",
+      "cnpj": "45.678.901/0001-23",
+      "email": "credito@inconfidencia.com",
+      "senha": "123456"
+    },
+    {
+      "id": 5,
+      "tipo": "banco",
+      "razaoSocial": "Banco Serra Azul",
+      "cnpj": "56.789.012/0001-34",
+      "email": "credito@serraazul.com",
+      "senha": "123456"
+    }
+  ],
+  "carros": [
+    {
+      "id": 1,
+      "matricula": "WC-0001",
+      "placa": "ABC1D23",
+      "ano": 1967,
+      "marca": "Ford",
+      "modelo": "Mustang Fastback",
+      "categoria": "muscle",
+      "diaria": 1200,
+      "foto": "assets/img/carros/mustang-1967.jpg",
+      "descricao": "Ícone dos muscle cars, V8 e linhas fastback.",
+      "wikipedia": "Ford_Mustang_(first_generation)",
+      "proprietarioTipo": "empresa",
+      "proprietarioId": 1
+    },
+    {
+      "id": 2,
+      "matricula": "WC-0002",
+      "placa": "BCD2E34",
+      "ano": 1969,
+      "marca": "Chevrolet",
+      "modelo": "Camaro SS",
+      "categoria": "muscle",
+      "diaria": 1150,
+      "foto": "assets/img/carros/camaro-1969.jpg",
+      "descricao": "Rival direto do Mustang, com visual agressivo.",
+      "wikipedia": "Chevrolet_Camaro_(first_generation)",
+      "proprietarioTipo": "empresa",
+      "proprietarioId": 1
+    },
+    {
+      "id": 3,
+      "matricula": "WC-0003",
+      "placa": "CDE3F45",
+      "ano": 1970,
+      "marca": "Dodge",
+      "modelo": "Charger R/T",
+      "categoria": "muscle",
+      "diaria": 1300,
+      "foto": "assets/img/carros/charger-1970.jpg",
+      "descricao": "Grande, barulhento e inesquecível.",
+      "wikipedia": "Dodge_Charger_(B-body)",
+      "proprietarioTipo": "empresa",
+      "proprietarioId": 2
+    },
+    {
+      "id": 4,
+      "matricula": "WC-0004",
+      "placa": "DEF4G56",
+      "ano": 1970,
+      "marca": "Plymouth",
+      "modelo": "Barracuda",
+      "categoria": "muscle",
+      "diaria": 1100,
+      "foto": "assets/img/carros/barracuda-1970.jpg",
+      "descricao": "Muscle car raro e muito procurado por colecionadores.",
+      "wikipedia": "Plymouth_Barracuda",
+      "proprietarioTipo": "banco",
+      "proprietarioId": 3
+    },
+    {
+      "id": 5,
+      "matricula": "WC-0005",
+      "placa": "EFG5H67",
+      "ano": 1973,
+      "marca": "Porsche",
+      "modelo": "911 Carrera RS",
+      "categoria": "europeu",
+      "diaria": 1800,
+      "foto": "assets/img/carros/porsche-911-1973.jpg",
+      "descricao": "O esportivo alemão que virou lenda.",
+      "wikipedia": "Porsche_911_Carrera_RS",
+      "proprietarioTipo": "empresa",
+      "proprietarioId": 1
+    },
+    {
+      "id": 6,
+      "matricula": "WC-0006",
+      "placa": "FGH6I78",
+      "ano": 1966,
+      "marca": "Jaguar",
+      "modelo": "E-Type Série 1",
+      "categoria": "europeu",
+      "diaria": 2000,
+      "foto": "assets/img/carros/etype-1966.jpg",
+      "descricao": "Considerado um dos carros mais bonitos já fabricados.",
+      "wikipedia": "Jaguar_E-Type",
+      "proprietarioTipo": "empresa",
+      "proprietarioId": 2
+    },
+    {
+      "id": 7,
+      "matricula": "WC-0007",
+      "placa": "GHI7J89",
+      "ano": 1968,
+      "marca": "Alfa Romeo",
+      "modelo": "Giulia Sprint GT",
+      "categoria": "europeu",
+      "diaria": 950,
+      "foto": "assets/img/carros/giulia-1968.jpg",
+      "descricao": "Cupê italiano elegante e ágil.",
+      "wikipedia": "Alfa_Romeo_Giulia_Sprint_GT",
+      "proprietarioTipo": "cliente",
+      "proprietarioId": 2
+    },
+    {
+      "id": 8,
+      "matricula": "WC-0008",
+      "placa": "HIJ8K90",
+      "ano": 1972,
+      "marca": "BMW",
+      "modelo": "2002 Tii",
+      "categoria": "europeu",
+      "diaria": 850,
+      "foto": "assets/img/carros/bmw-2002-1972.jpg",
+      "descricao": "Sedã esportivo compacto que ajudou a criar a fama da BMW.",
+      "wikipedia": "BMW_2002",
+      "proprietarioTipo": "empresa",
+      "proprietarioId": 1
+    },
+    {
+      "id": 9,
+      "matricula": "WC-0009",
+      "placa": "IJK9L01",
+      "ano": 1969,
+      "marca": "Mercedes-Benz",
+      "modelo": "280 SL Pagoda",
+      "categoria": "conversivel",
+      "diaria": 1700,
+      "foto": "assets/img/carros/mercedes-280sl-1969.jpg",
+      "descricao": "Roadster clássico com teto removível em formato de pagode.",
+      "wikipedia": "Mercedes-Benz_W113",
+      "proprietarioTipo": "empresa",
+      "proprietarioId": 2
+    },
+    {
+      "id": 10,
+      "matricula": "WC-0010",
+      "placa": "JKL0M12",
+      "ano": 1970,
+      "marca": "MG",
+      "modelo": "MGB Roadster",
+      "categoria": "conversivel",
+      "diaria": 700,
+      "foto": "assets/img/carros/mgb-1970.jpg",
+      "descricao": "Roadster britânico leve e divertido de dirigir.",
+      "wikipedia": "MGB",
+      "proprietarioTipo": "empresa",
+      "proprietarioId": 1
+    },
+    {
+      "id": 11,
+      "matricula": "WC-0011",
+      "placa": "KLM1N23",
+      "ano": 1966,
+      "marca": "Alfa Romeo",
+      "modelo": "Spider Duetto",
+      "categoria": "conversivel",
+      "diaria": 1000,
+      "foto": "assets/img/carros/spider-duetto-1966.jpg",
+      "descricao": "O roadster italiano do filme A Primeira Noite de um Homem.",
+      "wikipedia": "Alfa_Romeo_Spider",
+      "proprietarioTipo": "banco",
+      "proprietarioId": 4
+    },
+    {
+      "id": 12,
+      "matricula": "WC-0012",
+      "placa": "LMN2O34",
+      "ano": 1974,
+      "marca": "Triumph",
+      "modelo": "TR6",
+      "categoria": "conversivel",
+      "diaria": 780,
+      "foto": "assets/img/carros/triumph-tr6-1974.jpg",
+      "descricao": "Roadster britânico de seis cilindros e muito som.",
+      "wikipedia": "Triumph_TR6",
+      "proprietarioTipo": "empresa",
+      "proprietarioId": 2
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "clienteId": 1,
+      "carroId": 9,
+      "dataRetirada": "2026-11-07",
+      "dataDevolucao": "2026-11-08",
+      "valorTotal": 3400,
+      "status": "pendente",
+      "criadoEm": "2026-11-02T10:00:00-03:00"
+    },
+    {
+      "id": 2,
+      "clienteId": 2,
+      "carroId": 5,
+      "agenteId": 1,
+      "dataRetirada": "2026-10-24",
+      "dataDevolucao": "2026-10-25",
+      "valorTotal": 3600,
+      "status": "contrato_executado",
+      "criadoEm": "2026-10-19T15:30:00-03:00"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 1,
+      "pedidoId": 2,
+      "agenteId": 1,
+      "dataExecucao": "2026-10-22",
+      "tipo": "aluguel com crédito"
+    }
+  ],
+  "creditos": [
+    {
+      "id": 1,
+      "contratoId": 1,
+      "bancoId": 3,
+      "valor": 3600,
+      "parcelas": 3,
+      "taxa": 1.9
+    }
+  ]
+}

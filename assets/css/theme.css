@@ -1,0 +1,54 @@
+/* Tema retrô 60-70 do WeekndCar */
+:root {
+  --wc-creme: #F4EBD9;
+  --wc-vermelho: #B3261E;
+  --wc-cafe: #3B2A20;
+  --wc-mostarda: #D9A441;
+  --wc-fonte-titulo: "Playfair Display", Georgia, serif;
+  --wc-fonte-texto: "Lora", Georgia, serif;
+}
+
+body {
+  background-color: var(--wc-creme);
+  color: var(--wc-cafe);
+  font-family: var(--wc-fonte-texto);
+}
+
+h1, h2, h3, h4, .navbar-brand {
+  font-family: var(--wc-fonte-titulo);
+  color: var(--wc-cafe);
+}
+
+.btn-wc {
+  background-color: var(--wc-vermelho);
+  border-color: var(--wc-vermelho);
+  color: var(--wc-creme);
+}
+
+.btn-wc:hover {
+  background-color: var(--wc-cafe);
+  border-color: var(--wc-cafe);
+  color: var(--wc-creme);
+}
+
+.faixa-retro {
+  height: 8px;
+  background: linear-gradient(90deg, var(--wc-vermelho) 33%, var(--wc-mostarda) 33% 66%, var(--wc-cafe) 66%);
+}
+
+/* Ficha de cadastro: papel creme com sombra deslocada, como um formulário de locadora antiga */
+.ficha {
+  background-color: #FBF6EA;
+  border: 2px solid var(--wc-cafe);
+  box-shadow: 6px 6px 0 var(--wc-mostarda);
+}
+
+.form-control:focus {
+  border-color: var(--wc-vermelho);
+  box-shadow: 0 0 0 .2rem rgba(179, 38, 30, .25);
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--wc-vermelho);
+  outline-offset: 2px;
+}

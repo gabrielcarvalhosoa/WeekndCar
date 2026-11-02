@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Logo WeekndCar">
+  <circle cx="120" cy="120" r="112" fill="#F4EBD9" stroke="#3B2A20" stroke-width="6"/>
+  <circle cx="120" cy="120" r="96" fill="none" stroke="#B3261E" stroke-width="4"/>
+  <rect x="24" y="104" width="192" height="8" fill="#B3261E"/>
+  <rect x="24" y="116" width="192" height="8" fill="#D9A441"/>
+  <rect x="24" y="128" width="192" height="8" fill="#3B2A20"/>
+  <text x="120" y="88" text-anchor="middle" font-family="Georgia, 'Playfair Display', serif" font-size="30" font-weight="700" fill="#3B2A20">WeekndCar</text>
+  <text x="120" y="170" text-anchor="middle" font-family="Georgia, 'Lora', serif" font-size="15" fill="#3B2A20">CLÁSSICOS · BH</text>
+</svg>
