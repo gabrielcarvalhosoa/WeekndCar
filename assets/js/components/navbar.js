@@ -1,7 +1,6 @@
 // Barra de navegação que muda conforme a sessão (visitante, cliente ou agente)
 import { sessao, sair } from "../auth/auth.js";
-
-const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+import { esc } from "./dom.js";
 
 export function renderNavbar(alvo, emPages = false) {
   const p = emPages ? "" : "pages/";

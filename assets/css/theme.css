@@ -52,3 +52,75 @@ a:focus-visible, button:focus-visible {
   outline: 3px solid var(--wc-vermelho);
   outline-offset: 2px;
 }
+
+/* Catálogo */
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.1;
+  max-width: 20ch;
+}
+
+.swiper {
+  --swiper-theme-color: var(--wc-vermelho);
+  --swiper-navigation-size: 26px;
+  padding-bottom: 2.5rem;
+}
+
+.slide-carro {
+  display: block;
+  border: 2px solid var(--wc-cafe);
+  color: inherit;
+  text-decoration: none;
+  background: var(--wc-cafe);
+}
+
+.slide-carro img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.slide-legenda { display: block; padding: .6rem .9rem; color: var(--wc-creme); }
+.slide-marca { display: block; font-size: .9rem; color: var(--wc-mostarda); }
+.slide-modelo { font-family: var(--wc-fonte-titulo); font-size: 1.3rem; }
+
+.btn-filtro {
+  border: 2px solid var(--wc-cafe);
+  border-radius: 0;
+  background: transparent;
+  color: var(--wc-cafe);
+}
+.btn-filtro[aria-pressed="true"] { background: var(--wc-cafe); color: var(--wc-creme); }
+
+.card-carro {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 2px solid var(--wc-cafe);
+  background: #FBF6EA;
+  color: inherit;
+  text-decoration: none;
+}
+.card-carro-foto img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.card-carro-corpo { padding: .85rem 1rem 1rem; border-top: 2px solid var(--wc-cafe); }
+.card-carro-marca { font-size: .9rem; color: var(--wc-vermelho); }
+.card-carro-modelo { font-size: 1.35rem; margin: 0 0 .6rem; }
+.card-carro-rodape { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+
+.etiqueta-preco {
+  background: var(--wc-mostarda);
+  color: var(--wc-cafe);
+  padding: .15rem .6rem;
+  font-weight: 600;
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
+  padding-left: 1rem;
+}
+
+/* Detalhe do carro */
+.foto-detalhe { border: 2px solid var(--wc-cafe); background: var(--wc-cafe); }
+.foto-detalhe img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.ficha-tecnica { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1.25rem; margin: 1.25rem 0; }
+.ficha-tecnica dt { font-weight: 600; }
+.ficha-tecnica dd { margin: 0; }
+.texto-wiki { max-width: 70ch; line-height: 1.7; }
