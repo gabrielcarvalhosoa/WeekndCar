@@ -294,6 +294,22 @@
       "valorTotal": 3600,
       "status": "contrato_executado",
       "criadoEm": "2026-10-19T15:30:00-03:00"
+    },
+    {
+      "clienteId": 1,
+      "carroId": 6,
+      "dataRetirada": "2026-11-07",
+      "dataDevolucao": "2026-11-08",
+      "valorTotal": 4000,
+      "status": "pendente",
+      "criadoEm": "2026-11-03T10:21:26.573Z",
+      "historico": [
+        {
+          "status": "pendente",
+          "em": "2026-11-03T10:21:26.573Z"
+        }
+      ],
+      "id": 3
     }
   ],
   "contratos": [

@@ -314,6 +314,9 @@ npx serve .
 ```
 🎨 *O site estará disponível na porta indicada pelo `serve` (normalmente **http://localhost:3000**; se estiver ocupada, ele sugere outra). Com o Live Server do VS Code, clique em **Go Live** no `index.html`.*
 
+> [!IMPORTANT]
+> O arquivo `serve.json` precisa ficar na raiz. Sem ele, o `serve` redireciona `carro.html?id=1` para `/pages/carro` e descarta o `?id=`, e a página do carro mostra "Nenhum carro foi escolhido". Se mudar o `serve.json`, pare o `serve` (Ctrl+C) e rode de novo.
+
 > [!NOTE]
 > A porta 3000 é usada pelo JSON Server. Se o `serve` escolher outra porta, nada muda na configuração, pois o front-end só precisa alcançar `http://localhost:3000`.
 
