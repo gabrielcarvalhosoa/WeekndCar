@@ -143,3 +143,6 @@ a:focus-visible, button:focus-visible {
 .status-cancelado { border-color: #6B6259; background: #EDE7DA; color: #4A423A; }
 
 .previsao { border-left: 4px solid var(--wc-mostarda); padding: .5rem .9rem; background: var(--wc-creme); }
+
+/* Painel do agente */
+.destaque-lateral { border-left: 4px solid var(--wc-mostarda); padding: .5rem .9rem; background: var(--wc-creme); }

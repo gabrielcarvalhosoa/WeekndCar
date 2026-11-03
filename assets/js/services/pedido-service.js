@@ -1,6 +1,8 @@
 // Pedidos de aluguel no JSON Server
 import { api } from "../api/api-client.js";
-import { ocupaOCarro, podeAlterar, podeCancelar } from "../models/pedido.js";
+import {
+  exigirResponsavel, ocupaOCarro, podeAlterar, podeCancelar, registrarHistorico, validarFimDeSemana,
+} from "../models/pedido.js";
 
 const COLECAO = "pedidos";
 
@@ -22,6 +24,40 @@ export async function alterarFimDeSemana(id, retirada, devolucao) {
 export async function cancelar(id) {
   const pedido = await api.buscar(COLECAO, id);
   if (!podeCancelar(pedido)) throw new Error("Este pedido não pode mais ser cancelado.");
-  const historico = [...(pedido.historico ?? []), { status: "cancelado", em: new Date().toISOString() }];
-  return api.atualizar(COLECAO, id, { status: "cancelado", historico });
+  return api.atualizar(COLECAO, id, { status: "cancelado", historico: registrarHistorico(pedido, "cancelado") });
+}
+
+// Ações do agente (empresa ou banco)
+export const listarTodos = () => api.listar(COLECAO);
+
+export async function assumir(id, agenteId) {
+  const pedido = await api.buscar(COLECAO, id);
+  if (pedido.status !== "pendente" || pedido.agenteId) throw new Error("Este pedido já foi assumido ou não está mais pendente.");
+  return api.atualizar(COLECAO, id, {
+    agenteId,
+    status: "em_analise",
+    historico: registrarHistorico(pedido, "em_analise", "Análise financeira iniciada"),
+  });
+}
+
+export async function avaliar(id, agenteId, aprovado, parecer) {
+  const pedido = await api.buscar(COLECAO, id);
+  exigirResponsavel(pedido, agenteId, "em_analise");
+  const status = aprovado ? "aprovado" : "recusado";
+  return api.atualizar(COLECAO, id, { status, historico: registrarHistorico(pedido, status, parecer) });
+}
+
+export async function modificarPeloAgente(id, agenteId, { retirada, devolucao, valorTotal }) {
+  const pedido = await api.buscar(COLECAO, id);
+  exigirResponsavel(pedido, agenteId, "em_analise");
+  const erros = validarFimDeSemana(retirada, devolucao);
+  if (erros.length) throw new Error(erros[0]);
+  if (!(valorTotal > 0)) throw new Error("Informe um valor total maior que zero.");
+  if (await carroOcupado(pedido.carroId, retirada, pedido.id)) throw new Error("Este carro já está reservado nesse fim de semana.");
+  return api.atualizar(COLECAO, id, {
+    dataRetirada: retirada,
+    dataDevolucao: devolucao,
+    valorTotal,
+    historico: registrarHistorico(pedido, pedido.status, "Pedido modificado pelo agente"),
+  });
 }

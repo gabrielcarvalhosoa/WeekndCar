@@ -71,6 +71,6 @@ Como agente, quero executar o contrato de um pedido aprovado para formalizar o a
   - O contrato registra o tipo de propriedade do automóvel (cliente, empresa ou banco).
 
 **HU12 — Conceder crédito**
-Como banco, quero vincular um contrato de crédito a um pedido aprovado para financiar o aluguel.
+Como banco, quero vincular um contrato de crédito a um contrato de aluguel já executado para financiar o aluguel.
 - Critérios de aceitação:
   - O contrato de crédito guarda valor, parcelas e taxa e fica ligado ao banco que o concedeu.

@@ -2,8 +2,9 @@
 import { exigirCliente } from "../auth/auth.js";
 import { renderNavbar } from "../components/navbar.js";
 import { esc, mostrarAviso, mensagemDeErro } from "../components/dom.js";
+import { historicoHtml } from "../components/historico.js";
 import { formatarMoeda } from "../models/carro.js";
-import { STATUS, formatarDataHora, formatarDia, podeAlterar, podeCancelar } from "../models/pedido.js";
+import { STATUS, formatarDia, podeAlterar, podeCancelar } from "../models/pedido.js";
 import { listar as listarCarros } from "../services/carro-service.js";
 import * as pedidos from "../services/pedido-service.js";
 
@@ -38,8 +39,7 @@ function desenhar(lista) {
   $("lista").innerHTML = lista.map((p) => {
     const c = carros.get(p.carroId);
     const st = STATUS[p.status] ?? { rotulo: p.status, classe: "status-pendente" };
-    const historico = (p.historico?.length ? p.historico : [{ status: p.status, em: p.criadoEm }])
-      .map((h) => `<li>${esc((STATUS[h.status] ?? { rotulo: h.status }).rotulo)}, em ${esc(formatarDataHora(h.em))}</li>`).join("");
+    const historico = historicoHtml(p);
     return `
       <article class="pedido">
         <div class="pedido-topo">

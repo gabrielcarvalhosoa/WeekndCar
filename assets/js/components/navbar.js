@@ -10,7 +10,7 @@ export function renderNavbar(alvo, emPages = false) {
     ? [
         ...(s.tipo === "cliente"
           ? [`<a class="nav-link" href="${p}meus-pedidos.html">Meus pedidos</a>`, `<a class="nav-link" href="${p}cadastro.html">Meu cadastro</a>`]
-          : []),
+          : [`<a class="nav-link" href="${p}painel-agente.html">Painel do agente</a>`]),
         `<span class="nav-link">${esc(s.nome)}</span>`,
         `<button id="btn-sair" type="button" class="btn btn-sm btn-wc ms-lg-2">Sair</button>`,
       ]

@@ -23,3 +23,5 @@ export async function excluir(id) {
   await Promise.all(pedidos.map((p) => api.remover("pedidos", p.id)));
   await api.remover(COLECAO, id);
 }
+
+export const listar = () => api.listar(COLECAO);

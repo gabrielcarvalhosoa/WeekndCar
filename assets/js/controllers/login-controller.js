@@ -10,8 +10,8 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
   msg.classList.add("d-none");
   try {
-    await entrar(form.elements.email.value.trim(), form.elements.senha.value);
-    location.href = "../index.html";
+    const sessao = await entrar(form.elements.email.value.trim(), form.elements.senha.value);
+    location.href = sessao.tipo === "agente" ? "painel-agente.html" : "../index.html";
   } catch (err) {
     msg.textContent = err instanceof TypeError
       ? "Não foi possível conectar à API. Verifique se o comando npm run api está rodando."

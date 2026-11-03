@@ -35,3 +35,11 @@ export function exigirCliente(destino = "login.html") {
   location.replace(destino);
   return null;
 }
+
+// Telas só de agente (empresa ou banco)
+export function exigirAgente(destino = "login.html") {
+  const s = sessao();
+  if (s?.tipo === "agente") return s;
+  location.replace(destino);
+  return null;
+}

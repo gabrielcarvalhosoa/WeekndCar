@@ -28,3 +28,5 @@ export function validarCliente(c) {
   }
   return erros;
 }
+
+export const rendaTotal = (cliente) => (cliente.rendimentos ?? []).reduce((soma, r) => soma + Number(r.valor), 0);

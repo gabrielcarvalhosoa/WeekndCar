@@ -34,6 +34,7 @@ flowchart LR
         UC11(Avaliar pedido financeiramente)
         UC12(Executar contrato)
         UC13(Conceder contrato de crédito)
+        UC14(Assumir pedido para análise)
     end
 
     V --- UC1
@@ -51,6 +52,7 @@ flowchart LR
     A --- UC8
     A --- UC11
     A --- UC12
+    A --- UC14
     B -->|herda| A
     B --- UC13
 ```
@@ -64,6 +66,7 @@ flowchart LR
 | Criar pedido de aluguel | Cliente | Logado | Pedido com status `pendente` |
 | Modificar pedido | Cliente, Agente | Pedido não contratado | Pedido atualizado |
 | Cancelar pedido | Cliente | Pedido sem contrato executado | Status `cancelado` |
-| Avaliar pedido financeiramente | Agente | Pedido `pendente` ou `em análise` | Status `aprovado` ou `recusado` |
-| Executar contrato | Agente | Pedido `aprovado` | Contrato criado, status `contrato executado` |
-| Conceder contrato de crédito | Banco | Pedido `aprovado` | Contrato de crédito vinculado ao contrato |
+| Assumir pedido para análise | Agente | Pedido `pendente`, sem agente | Pedido `em análise`, com o agente responsável |
+| Avaliar pedido financeiramente | Agente | Pedido `em análise` sob sua responsabilidade | Status `aprovado` ou `recusado`, com parecer opcional |
+| Executar contrato | Agente | Pedido `aprovado` sob sua responsabilidade | Contrato criado, status `contrato executado` |
+| Conceder contrato de crédito | Banco | Contrato executado, ainda sem crédito | Contrato de crédito vinculado ao contrato |

@@ -68,3 +68,16 @@ export function novoPedido({ clienteId, carro, retirada, devolucao }) {
     historico: [{ status: "pendente", em: agora }],
   };
 }
+
+// Histórico de status: cada mudança vira uma linha, com nota opcional (parecer do agente, por exemplo)
+export function registrarHistorico(pedido, status, nota) {
+  const atual = pedido.historico?.length ? pedido.historico : [{ status: pedido.status, em: pedido.criadoEm }];
+  return [...atual, { status, em: new Date().toISOString(), ...(nota ? { nota } : {}) }];
+}
+
+// Só o agente que assumiu o pedido pode avaliá-lo, modificá-lo ou executar o contrato
+export function exigirResponsavel(pedido, agenteId, statusEsperado) {
+  if (pedido.agenteId !== agenteId || pedido.status !== statusEsperado) {
+    throw new Error("Este pedido não está sob a sua responsabilidade nesta etapa.");
+  }
+}

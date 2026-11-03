@@ -109,3 +109,10 @@ Não grave chaves estrangeiras nulas no `db.json` (por exemplo, `"agenteId": nul
 - O cliente pode alterar o fim de semana enquanto o pedido estiver pendente ou em análise.
 - O cliente pode cancelar enquanto o pedido estiver pendente, em análise ou aprovado.
 - Cada mudança de status é registrada no campo `historico`, com data e hora.
+
+## Regras do agente
+
+- Qualquer agente vê os pedidos pendentes. Ao assumir um pedido, o campo `agenteId` passa a existir e só esse agente pode avaliá-lo, modificá-lo e executar o contrato.
+- O agente pode modificar o fim de semana e o valor total enquanto o pedido estiver em análise.
+- A avaliação aceita um parecer opcional, que aparece no histórico e é visto pelo cliente.
+- O crédito é concedido por um banco sobre um contrato já executado, com valor, parcelas e taxa em % ao mês. O contrato passa a ser do tipo "aluguel com crédito".
