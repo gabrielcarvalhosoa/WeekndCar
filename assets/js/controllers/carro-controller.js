@@ -5,6 +5,8 @@ import { esc, criarImagem, mensagemDeErro } from "../components/dom.js";
 import { CATEGORIAS, formatarMoeda, imagemPlaceholder } from "../models/carro.js";
 import { buscarPorId, nomeDoProprietario } from "../services/carro-service.js";
 import { resumoDoCarro } from "../external/wikipedia.js";
+import { montarMapa } from "../components/mapa.js";
+import { linkComoChegar, pontoDeRetirada } from "../models/retirada.js";
 
 const $ = (id) => document.getElementById(id);
 renderNavbar($("navbar"), true);
@@ -24,6 +26,7 @@ try {
   if (!id) throw new Error("Nenhum carro foi escolhido. Volte ao catálogo e clique em um carro.");
   const c = await buscarPorId(id);
   const dono = await nomeDoProprietario(c);
+  const ponto = pontoDeRetirada(c);
   document.title = `${c.marca} ${c.modelo} | WeekndCar`;
   alvo.innerHTML = `
     <a href="../index.html">Voltar ao catálogo</a>
@@ -44,9 +47,16 @@ try {
         ${botaoReserva(c)}
       </div>
     </div>
+    <section class="mt-5" aria-labelledby="titulo-retirada">
+      <h2 id="titulo-retirada" class="h4">Retirada e devolução</h2>
+      <p>${esc(ponto.nome)}, ${esc(ponto.endereco)}. <a href="${esc(linkComoChegar(ponto))}" target="_blank" rel="noopener">Como chegar</a></p>
+      <div id="mapa" class="mapa" role="region" aria-label="Mapa do ponto de retirada"></div>
+      <p class="small mt-1">Local de referência aproximado.</p>
+    </section>
     <section class="mt-5"><h2 class="h4">Sobre o modelo</h2><div id="wiki"><p>Buscando o resumo na Wikipedia...</p></div></section>`;
   const foto = criarImagem(c, "../", imagemPlaceholder, `${c.marca} ${c.modelo} ${c.ano}`);
   $("foto").append(foto);
+  montarMapa($("mapa"), ponto);
 
   const resumo = await resumoDoCarro(c);
   if (!resumo) {

@@ -7,6 +7,7 @@ import {
   DIARIAS_FIM_DE_SEMANA, formatarFimDeSemana, nomeDoDia, novoPedido, podeAlterar,
   proximosFinsDeSemana, valorDoFimDeSemana, validarFimDeSemana,
 } from "../models/pedido.js";
+import { pontoDeRetirada } from "../models/retirada.js";
 import { buscarPorId as buscarCarro } from "../services/carro-service.js";
 import * as pedidos from "../services/pedido-service.js";
 import { previsaoFimDeSemana } from "../external/open-meteo.js";
@@ -44,7 +45,8 @@ function montar(sessao, carro, pedido) {
       <div class="col-lg-5">
         <div class="foto-detalhe" id="foto"></div>
         <h2 class="h4 mt-3">${esc(carro.marca)} ${esc(carro.modelo)}, ${esc(carro.ano)}</h2>
-        <p>${esc(CATEGORIAS[carro.categoria] ?? carro.categoria)}. Diária de ${formatarMoeda(carro.diaria)}.</p>
+        <p class="mb-1">${esc(CATEGORIAS[carro.categoria] ?? carro.categoria)}. Diária de ${formatarMoeda(carro.diaria)}.</p>
+        <p>Retirada e devolução: ${esc(pontoDeRetirada(carro).nome)}, ${esc(pontoDeRetirada(carro).bairro)}.</p>
       </div>
       <div class="col-lg-7">
         <form id="form-pedido" class="ficha p-4" novalidate>

@@ -4,6 +4,7 @@ import { renderNavbar } from "../components/navbar.js";
 import { esc, mostrarAviso, mensagemDeErro } from "../components/dom.js";
 import { historicoHtml } from "../components/historico.js";
 import { formatarMoeda } from "../models/carro.js";
+import { pontoDeRetirada } from "../models/retirada.js";
 import { STATUS, formatarDia, podeAlterar, podeCancelar } from "../models/pedido.js";
 import { listar as listarCarros } from "../services/carro-service.js";
 import * as pedidos from "../services/pedido-service.js";
@@ -47,6 +48,7 @@ function desenhar(lista) {
           <span class="status ${st.classe}">${esc(st.rotulo)}</span>
         </div>
         <p class="mb-1">Retirada: ${esc(formatarDia(p.dataRetirada))}. Devolução: ${esc(formatarDia(p.dataDevolucao))}.</p>
+        ${c ? `<p class="mb-1">Local: ${esc(pontoDeRetirada(c).nome)}, ${esc(pontoDeRetirada(c).bairro)}.</p>` : ""}
         <p class="mb-2">Valor total: <strong>${formatarMoeda(p.valorTotal)}</strong></p>
         <details><summary>Histórico do pedido</summary><ul class="mt-2 mb-0">${historico}</ul></details>
         <div class="d-flex flex-wrap gap-2 mt-3">

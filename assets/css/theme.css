@@ -146,3 +146,17 @@ a:focus-visible, button:focus-visible {
 
 /* Painel do agente */
 .destaque-lateral { border-left: 4px solid var(--wc-mostarda); padding: .5rem .9rem; background: var(--wc-creme); }
+
+/* Mapa de retirada */
+.mapa { height: 320px; border: 2px solid var(--wc-cafe); background: #E9DCC0; display: flex; align-items: center; justify-content: center; }
+.mapa.leaflet-container { display: block; font-family: var(--wc-fonte-texto); }
+.pino-wc {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--wc-vermelho);
+  border: 3px solid var(--wc-creme);
+  box-shadow: 0 0 0 2px var(--wc-cafe);
+  transform: rotate(-45deg);
+}
