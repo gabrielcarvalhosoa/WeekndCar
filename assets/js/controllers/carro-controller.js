@@ -13,10 +13,10 @@ const id = new URLSearchParams(location.search).get("id");
 const alvo = $("detalhe");
 const erro = (texto) => (alvo.innerHTML = `<div class="alert alert-danger" role="alert">${esc(texto)} <a href="../index.html">Voltar ao catálogo</a></div>`);
 
-function botaoReserva() {
+function botaoReserva(c) {
   const s = sessao();
   if (!s) return `<a class="btn btn-wc" href="login.html">Entre para reservar</a>`;
-  if (s.tipo === "cliente") return `<button class="btn btn-wc" type="button" disabled>Reservar este carro (em breve)</button>`;
+  if (s.tipo === "cliente") return `<a class="btn btn-wc" href="pedido.html?carroId=${encodeURIComponent(c.id)}">Reservar este carro</a>`;
   return "";
 }
 
@@ -40,7 +40,7 @@ try {
           <dt>Placa</dt><dd>${esc(c.placa)}</dd>
           <dt>Proprietário</dt><dd>${esc(dono)}</dd>
         </dl>
-        ${botaoReserva()}
+        ${botaoReserva(c)}
       </div>
     </div>
     <section class="mt-5"><h2 class="h4">Sobre o modelo</h2><div id="wiki"><p>Buscando o resumo na Wikipedia...</p></div></section>`;

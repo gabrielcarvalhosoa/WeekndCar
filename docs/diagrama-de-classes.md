@@ -43,6 +43,7 @@ classDiagram
         +date dataDevolucao
         +number valorTotal
         +string status
+        +list historico
     }
     class Contrato {
         +int id
@@ -100,3 +101,11 @@ stateDiagram-v2
 ## Observação sobre chaves estrangeiras
 
 Não grave chaves estrangeiras nulas no `db.json` (por exemplo, `"agenteId": null`). O JSON Server 0.17 interpreta qualquer campo terminado em `Id` como relação e retorna erro 500 em qualquer `DELETE` quando encontra um valor nulo. Omita o campo no pedido e preencha-o somente quando um agente assumir a avaliação.
+
+## Regras do pedido
+
+- O pedido só pode ser feito para um fim de semana: retirada no sábado e devolução no domingo seguinte, sempre depois de hoje. O valor é de 2 diárias.
+- Um carro não pode ter dois pedidos ativos (pendente, em análise, aprovado ou contrato executado) no mesmo fim de semana.
+- O cliente pode alterar o fim de semana enquanto o pedido estiver pendente ou em análise.
+- O cliente pode cancelar enquanto o pedido estiver pendente, em análise ou aprovado.
+- Cada mudança de status é registrada no campo `historico`, com data e hora.

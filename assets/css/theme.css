@@ -124,3 +124,22 @@ a:focus-visible, button:focus-visible {
 .ficha-tecnica dt { font-weight: 600; }
 .ficha-tecnica dd { margin: 0; }
 .texto-wiki { max-width: 70ch; line-height: 1.7; }
+
+/* Pedidos */
+.pedido {
+  border: 2px solid var(--wc-cafe);
+  background: #FBF6EA;
+  padding: 1rem 1.25rem;
+}
+.pedido + .pedido { margin-top: 1rem; }
+.pedido-topo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: .5rem; }
+
+.status { display: inline-block; padding: .15rem .65rem; border: 2px solid; font-weight: 600; font-size: .9rem; }
+.status-pendente { border-color: #8A6A1F; background: #F6E7BD; color: #4D3A0B; }
+.status-analise { border-color: var(--wc-cafe); background: #E9DCC0; color: var(--wc-cafe); }
+.status-aprovado { border-color: #2F6B3A; background: #DCEBD8; color: #1B4024; }
+.status-contrato { border-color: #2F6B3A; background: #2F6B3A; color: #fff; }
+.status-recusado { border-color: var(--wc-vermelho); background: #F6D9D6; color: #7A1812; }
+.status-cancelado { border-color: #6B6259; background: #EDE7DA; color: #4A423A; }
+
+.previsao { border-left: 4px solid var(--wc-mostarda); padding: .5rem .9rem; background: var(--wc-creme); }

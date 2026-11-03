@@ -8,7 +8,9 @@ export function renderNavbar(alvo, emPages = false) {
   const s = sessao();
   const itens = s
     ? [
-        s.tipo === "cliente" ? `<a class="nav-link" href="${p}cadastro.html">Meu cadastro</a>` : "",
+        ...(s.tipo === "cliente"
+          ? [`<a class="nav-link" href="${p}meus-pedidos.html">Meus pedidos</a>`, `<a class="nav-link" href="${p}cadastro.html">Meu cadastro</a>`]
+          : []),
         `<span class="nav-link">${esc(s.nome)}</span>`,
         `<button id="btn-sair" type="button" class="btn btn-sm btn-wc ms-lg-2">Sair</button>`,
       ]

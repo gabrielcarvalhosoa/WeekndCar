@@ -27,3 +27,11 @@ export async function entrar(email, senha) {
 export function sair() {
   sessionStorage.removeItem(CHAVE);
 }
+
+// Telas só de cliente: sem sessão de cliente, volta para o login
+export function exigirCliente(destino = "login.html") {
+  const s = sessao();
+  if (s?.tipo === "cliente") return s;
+  location.replace(destino);
+  return null;
+}

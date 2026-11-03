@@ -14,3 +14,15 @@ export function criarImagem(carro, raiz, placeholder, alt = "") {
   }, { once: true });
   return img;
 }
+
+// Aviso em uma caixa de alerta do Bootstrap (cada linha é um texto simples, sem HTML)
+export function mostrarAviso(caixa, texto, tipo = "danger") {
+  caixa.className = `alert alert-${tipo}`;
+  caixa.replaceChildren(...[].concat(texto).map((t) => Object.assign(document.createElement("div"), { textContent: t })));
+  caixa.scrollIntoView?.({ block: "nearest" });
+}
+
+export function mensagemDeErro(err) {
+  if (err instanceof TypeError) return "Não foi possível conectar à API. Verifique se o comando npm run api está rodando.";
+  return /Erro 404/.test(err.message) ? "Não encontramos o que você procurou." : err.message;
+}
