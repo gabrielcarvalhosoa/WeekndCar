@@ -1,6 +1,5 @@
 // Utilitários de DOM compartilhados pelos componentes
-export const esc = (t) =>
-  String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+export { esc } from "../utils/texto.js";
 
 // Imagem do carro: se a foto não existir, troca por uma ilustração retrô gerada no navegador
 export function criarImagem(carro, raiz, placeholder, alt = "") {

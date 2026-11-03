@@ -26,7 +26,7 @@
 
 ## 🚧 Status do Projeto
 
-🛠️ **Em desenvolvimento** — modelagem concluída; implementação em andamento.
+🛠️ **Em desenvolvimento** — modelagem concluída e protótipo funcional (catálogo, pedidos, painel do agente e mapa); faltam os prints e a revisão final.
 
 ![Versão](https://img.shields.io/badge/Versão-v0.1.0-blue?style=for-the-badge) ![HTML5](https://img.shields.io/badge/HTML5-007ec6?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-007ec6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-007ec6?style=for-the-badge&logo=javascript&logoColor=white) ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-007ec6?style=for-the-badge&logo=bootstrap&logoColor=white) ![JSON Server](https://img.shields.io/badge/JSON_Server-0.17.4-007ec6?style=for-the-badge&logo=json&logoColor=white) ![Licença](https://img.shields.io/badge/Licença-MIT-007ec6?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
 
@@ -147,14 +147,18 @@ O sistema segue o enunciado e se divide em **dois subsistemas**:
 1. **Construção dinâmica das páginas web:** pacotes `pages`, `components`, `styles` e `controllers`. Montam as telas com Bootstrap e atualizam o DOM a partir dos dados.
 2. **Gestão de pedidos e contratos:** pacotes `models`, `services` e `auth`. Concentram as regras de negócio, como o fluxo de status do pedido e as validações.
 
-A comunicação com o JSON Server fica isolada no pacote `api`, e as chamadas às APIs públicas ficam em `external`. Assim, uma falha ou troca de API externa não afeta as regras de negócio.
+A comunicação com o JSON Server fica isolada no pacote `api`, e as chamadas às APIs públicas ficam em `external`. Assim, uma falha ou troca de API externa não afeta as regras de negócio. O pacote `utils` guarda funções de texto sem dependências, e as dependências entre os pacotes seguem uma única direção, sem ciclos.
 
 **Decisões importantes:**
 - separar controladores, serviços e modelos para manter o **código alinhado aos diagramas**;
 - manter o JSON Server como única fonte de verdade; as APIs externas apenas complementam a experiência;
 - limitar os pedidos ao fim de semana, validando as datas no front-end.
 
-**Limitações conhecidas:** autenticação simulada e sem criptografia, e API sem controle de acesso por perfil; adequado apenas ao contexto acadêmico.
+**Limitações conhecidas:**
+- autenticação simulada e sem criptografia, e API sem controle de acesso por perfil; adequado apenas ao contexto acadêmico;
+- o proprietário do automóvel (cliente, empresa ou banco) fica registrado no próprio automóvel, e o tipo do contrato indica apenas se o aluguel é simples ou com crédito;
+- os pontos de retirada são constantes do código (`models/retirada.js`) e suas coordenadas são aproximadas;
+- o resumo da Wikipedia vem em inglês.
 
 ### Diagramas
 
@@ -173,16 +177,21 @@ flowchart LR
     U1([Cliente])
     U2([Agente])
 
+    subgraph EST["Servidor estático"]
+        SRV1["serve ou Live Server<br/>HTML, CSS e JS"]
+    end
+
     subgraph NAV["Navegador"]
         direction TB
         UI["Interface<br/>HTML5, CSS3 e Bootstrap 5"]
-        CAT["Catálogo"]
-        PED["Pedidos"]
+        CAT["Catálogo e detalhe do carro"]
+        PED["Novo pedido e Meus pedidos"]
         PAI["Painel do Agente"]
         AUT["Autenticação"]
         CLI["Cadastro de Cliente"]
         API["Cliente API<br/>Fetch"]
         EXT["Adaptadores externos"]
+        LIB["Bibliotecas<br/>Swiper e Leaflet"]
     end
 
     subgraph SRV["Servidor central"]
@@ -194,28 +203,32 @@ flowchart LR
         V["ViaCEP"]
         M["Open-Meteo"]
         W["Wikipedia REST"]
+        O["OpenStreetMap"]
     end
 
     U1 --> UI
     U2 --> UI
+    SRV1 -->|"entrega as páginas"| UI
     UI --> CAT
     UI --> PED
     UI --> PAI
     UI --> AUT
     UI --> CLI
+    CAT --> LIB
     CAT --> API
+    CAT --> EXT
     PED --> API
+    PED --> EXT
     PAI --> API
     AUT --> API
     CLI --> API
     CLI --> EXT
-    PED --> EXT
-    CAT --> EXT
     API -->|"HTTP REST"| JS
     JS --> DB
     EXT --> V
     EXT --> M
     EXT --> W
+    LIB --> O
 ```
 
 **Ciclo de vida do pedido:**
@@ -223,7 +236,7 @@ flowchart LR
 ```mermaid
 stateDiagram-v2
     [*] --> pendente
-    pendente --> em_analise : agente abre análise
+    pendente --> em_analise : agente assume o pedido
     pendente --> cancelado : cliente cancela
     em_analise --> aprovado : parecer positivo
     em_analise --> recusado : parecer negativo
@@ -350,25 +363,35 @@ Nesta etapa do laboratório, o sistema roda localmente. Para publicar:
 ```
 .
 ├── .gitignore                   # 🧹 Ignora node_modules e arquivos do sistema.
+├── LICENSE                      # 📄 Licença MIT.
 ├── README.md                    # 📘 Documentação principal do projeto.
 ├── package.json                 # 📦 Dependências e script `npm run api`.
+├── package-lock.json            # 🔒 Versões travadas das dependências.
+├── serve.json                   # ⚙️ Configuração do servidor estático (`npx serve .`).
 ├── db.json                      # 💾 Banco de dados do JSON Server (dados fictícios).
-├── index.html                   # 🏠 Página inicial com o catálogo.
+├── index.html                   # 🏠 Página inicial com carrossel, filtros e catálogo.
 │
-├── /pages                       # 📄 Demais telas (login, cadastro, pedidos, painel do agente).
+├── /pages                       # 📄 Demais telas
+│   ├── login.html               # 🔐 Login de cliente e agente.
+│   ├── cadastro.html            # 📝 Cadastro, consulta, alteração e exclusão do cliente.
+│   ├── carro.html               # 🚘 Detalhe do carro, resumo da Wikipedia e mapa de retirada.
+│   ├── pedido.html              # 📅 Novo pedido e alteração do fim de semana.
+│   ├── meus-pedidos.html        # 📋 Pedidos do cliente, status e histórico.
+│   └── painel-agente.html       # 🏦 Painel de empresas e bancos.
 │
 ├── /assets                      # 🖼️ Recursos do front-end
 │   ├── /css                     # 🎨 Tema retrô 60-70 (theme.css).
 │   ├── /img                     # 🖼️ Logo e fotos do catálogo.
 │   │   └── /carros              # 🚘 Fotos dos carros (nomes definidos no db.json).
 │   └── /js                      # ⚙️ Código JavaScript (ES Modules)
-│       ├── /api                 # 🔌 Cliente Fetch do JSON Server.
+│       ├── /controllers         # 🎮 Eventos e renderização de cada tela.
+│       ├── /components          # 🧱 Navbar, cards, carrossel, mapa, histórico e utilitários de DOM.
+│       ├── /models              # 🧬 Regras e validações (cliente, carro, pedido, crédito, retirada).
+│       ├── /services            # ⚙️ Operações sobre as coleções do JSON Server.
 │       ├── /auth                # 🛡️ Login simulado e controle por perfil.
-│       ├── /components          # 🧱 Componentes reutilizáveis (navbar, cards, carrossel, mapa).
-│       ├── /controllers         # 🎮 Eventos e renderização das telas.
-│       ├── /models              # 🧬 Classes de domínio (alinhadas ao diagrama de classes).
-│       ├── /services            # ⚙️ Regras de negócio (pedidos e contratos).
-│       └── /external            # 🌐 Adaptadores de ViaCEP, Open-Meteo e Wikipedia.
+│       ├── /api                 # 🔌 Cliente Fetch do JSON Server.
+│       ├── /external            # 🌐 ViaCEP, Open-Meteo e Wikipedia.
+│       └── /utils               # 🔤 Funções de texto sem dependências.
 │
 └── /docs                        # 📚 Modelagem UML (casos de uso, histórias, classes, pacotes e componentes).
 ```
@@ -459,13 +482,15 @@ curl 'http://localhost:3000/pedidos?status=pendente'
 
 Ainda não há testes automatizados. Nesta etapa, a validação é manual, seguindo as histórias do usuário em [`docs/historias-de-usuario.md`](./docs/historias-de-usuario.md):
 
-- [ ] Catálogo carrega do JSON Server e filtra por categoria
-- [ ] Cadastro de cliente preenche o endereço pelo CEP
-- [ ] Login libera as telas conforme o perfil
-- [ ] Cliente cria, modifica e cancela pedido
-- [ ] Datas aceitam apenas sábado e domingo
-- [ ] Agente aprova ou recusa pedidos e executa contrato
-- [ ] Banco vincula contrato de crédito
+- [ ] Catálogo carrega do JSON Server, filtra por categoria e mostra o carrossel
+- [ ] Página do carro mostra os dados, o resumo da Wikipedia e o mapa de retirada
+- [ ] Cadastro de cliente preenche o endereço pelo CEP e recusa CPF inválido ou repetido
+- [ ] Login libera as telas conforme o perfil e redireciona quem não tem acesso
+- [ ] Cliente cria, altera e cancela pedido; a previsão do tempo aparece
+- [ ] Um carro não aceita dois pedidos no mesmo fim de semana
+- [ ] Agente assume, modifica, aprova ou recusa pedidos e executa o contrato
+- [ ] Banco concede crédito sobre um contrato executado
+- [ ] Cliente vê o parecer do agente no histórico do pedido
 
 Evolução prevista: testes unitários das regras de status com **Vitest** ou **Jest**.
 
@@ -517,6 +542,6 @@ Evolução prevista: testes unitários das regras de status com **Vitest** ou **
 
 ## 📄 Licença
 
-Este projeto é distribuído sob a **Licença MIT**. Adicione um arquivo `LICENSE` na raiz do repositório com o texto da licença.
+Este projeto é distribuído sob a **Licença MIT**. Veja o arquivo [LICENSE](./LICENSE).
 
 ---

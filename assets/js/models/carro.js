@@ -1,5 +1,5 @@
 // Regras de apresentação do Automóvel (alinhadas ao diagrama de classes)
-import { esc } from "../components/dom.js";
+import { esc } from "../utils/texto.js";
 
 export const CATEGORIAS = {
   muscle: "Muscle cars",
