@@ -1,7 +1,7 @@
 // Página de detalhes do carro
 import { sessao } from "../auth/auth.js";
 import { renderNavbar } from "../components/navbar.js";
-import { esc, criarImagem } from "../components/dom.js";
+import { esc, criarImagem, mensagemDeErro } from "../components/dom.js";
 import { CATEGORIAS, formatarMoeda, imagemPlaceholder } from "../models/carro.js";
 import { buscarPorId, nomeDoProprietario } from "../services/carro-service.js";
 import { resumoDoCarro } from "../external/wikipedia.js";
@@ -21,6 +21,7 @@ function botaoReserva(c) {
 }
 
 try {
+  if (!id) throw new Error("Nenhum carro foi escolhido. Volte ao catálogo e clique em um carro.");
   const c = await buscarPorId(id);
   const dono = await nomeDoProprietario(c);
   document.title = `${c.marca} ${c.modelo} | WeekndCar`;
@@ -56,5 +57,6 @@ try {
     if (foto.dataset.semFoto && resumo.imagem) foto.src = resumo.imagem; // sem foto local, usa a da Wikipedia
   }
 } catch (err) {
-  erro(err instanceof TypeError ? "Não foi possível conectar à API. Verifique se o comando npm run api está rodando." : "Carro não encontrado.");
+  console.error(err); // o detalhe técnico fica no Console do navegador (F12)
+  erro(mensagemDeErro(err));
 }
