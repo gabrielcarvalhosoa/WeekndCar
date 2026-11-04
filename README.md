@@ -408,13 +408,13 @@ Nesta etapa do laboratório, o sistema roda localmente. Para publicar:
 | Tela | Captura de Tela |
 | :---: | :---: |
 | **Página Inicial (Catálogo)** | **Detalhe do Carro** |
-| <img width="1763" height="2840" alt="pagina_inicial" src="https://github.com/user-attachments/assets/a8312c50-e77f-42de-8f3f-3c447b6414ff" /> | <img width="1763" height="1711" alt="detalhes_do_carro" src="https://github.com/user-attachments/assets/b4b1fe27-adc9-40f5-93c6-7a47651c2bcb" /> |
+| <img width="1763" height="2840" alt="pagina_inicial" src="https://github.com/user-attachments/assets/a4b9b3df-d0bc-4ac4-b5d3-3df56b02fdb6" /> | <img width="1763" height="1711" alt="detalhes_do_carro" src="https://github.com/user-attachments/assets/b4b1fe27-adc9-40f5-93c6-7a47651c2bcb" /> |
 | **Cadastro de Cliente** | **Login** |
-| _Print aqui_ | _Print aqui_ |
+| <img width="1763" height="1105" alt="cadastro" src="https://github.com/user-attachments/assets/85950d1a-b4d7-4b19-a9de-a054c6cc35fa" /> | <img width="1763" height="844" alt="login" src="https://github.com/user-attachments/assets/1ee397e7-ccfb-45bd-b8bc-42bd4469dde7" /> |
 | **Novo Pedido (com previsão do tempo)** | **Meus Pedidos (status)** |
-| _Print aqui_ | _Print aqui_ |
+| <img width="1763" height="844" alt="novo_pedido" src="https://github.com/user-attachments/assets/954ae466-620f-4bce-bced-1bfd32b4155b" /> | <img width="1763" height="1065" alt="meus_pedidos" src="https://github.com/user-attachments/assets/c9ffd9e5-9d62-4160-b223-21f0604c3666" /> |
 | **Painel do Agente** | **Mapa de Retirada** |
-| _Print aqui_ | _Print aqui_ |
+| <img width="1763" height="874" alt="painel_do_agente" src="https://github.com/user-attachments/assets/60eef409-9e44-4bda-83e7-4c6fb11594bb" /> | <img width="1652" height="547" alt="mapa_retirada" src="https://github.com/user-attachments/assets/1704279b-11ba-4800-8a1e-fac9df7f1fdf" /> |
 
 ### 💻 Exemplo de Saída no Terminal (API)
 
