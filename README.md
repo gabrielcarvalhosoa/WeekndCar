@@ -516,7 +516,7 @@ Evolução prevista: testes unitários das regras de status com **Vitest** ou **
 
 | 👤 Nome | :octocat: GitHub | 💼 LinkedIn | 📤 E-mail |
 |---------|-----------------|-------------|-----------|
-| Gabriel Carvalho Soares | [@gabrielcarvalhosoa](https://github.com/gabrielcarvalhosoa) | [Gabriel Carvalho](https://www.linkedin.com/in/gabrielcarvalhocomp) | seu-email@exemplo.com |
+| Gabriel Carvalho Soares | [@gabrielcarvalhosoa](https://github.com/gabrielcarvalhosoa) | [Gabriel Carvalho](https://www.linkedin.com/in/gabrielcarvalhocomp) | gabrielcarvalhosoa@gmail.com |
 
 > [!TIP]
 > 💡 **Dica:** substitua os dados acima pelos seus e inclua os demais integrantes do grupo, se houver.
