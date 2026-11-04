@@ -408,7 +408,9 @@ Nesta etapa do laboratório, o sistema roda localmente. Para publicar:
 | Tela | Captura de Tela |
 | :---: | :---: |
 | **Página Inicial (Catálogo)** | **Detalhe do Carro** |
-| _Print aqui_ | _Print aqui_ |
+| <img width="1763" height="2840" alt="pagina_inicial" src="https://github.com/user-attachments/assets/a8312c50-e77f-42de-8f3f-3c447b6414ff" />
+ | <img width="1763" height="1711" alt="detalhes_do_carro" src="https://github.com/user-attachments/assets/b4b1fe27-adc9-40f5-93c6-7a47651c2bcb" />
+ |
 | **Cadastro de Cliente** | **Login** |
 | _Print aqui_ | _Print aqui_ |
 | **Novo Pedido (com previsão do tempo)** | **Meus Pedidos (status)** |
