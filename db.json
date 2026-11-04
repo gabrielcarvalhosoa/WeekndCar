@@ -310,6 +310,22 @@
         }
       ],
       "id": 3
+    },
+    {
+      "clienteId": 1,
+      "carroId": 5,
+      "dataRetirada": "2026-11-07",
+      "dataDevolucao": "2026-11-08",
+      "valorTotal": 3600,
+      "status": "pendente",
+      "criadoEm": "2026-11-04T20:55:01.417Z",
+      "historico": [
+        {
+          "status": "pendente",
+          "em": "2026-11-04T20:55:01.417Z"
+        }
+      ],
+      "id": 4
     }
   ],
   "contratos": [
