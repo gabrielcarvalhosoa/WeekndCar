@@ -398,11 +398,6 @@ Nesta etapa do laboratório, o sistema roda localmente. Para publicar:
 
 ---
 
-## 🎥 Demonstração
-
-> [!WARNING]
-> Prints e GIFs ainda não foram adicionados. Substitua os espaços reservados abaixo por imagens hospedadas na pasta `docs/img/` ou no GitHub Pages.
-
 ### 🌐 Aplicação Web
 
 | Tela | Captura de Tela |
