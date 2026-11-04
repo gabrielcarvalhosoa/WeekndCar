@@ -11,8 +11,8 @@ export const PONTOS = {
     nome: "Alterosa Clássicos",
     bairro: "Pampulha",
     endereco: "Próximo à Igreja da Pampulha, Pampulha, Belo Horizonte, MG",
-    lat: -19.8515,
-    lng: -43.9795,
+    lat: -19.8583,
+    lng: -43.9790,
   },
 };
 
