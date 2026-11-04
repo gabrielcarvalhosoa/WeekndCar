@@ -40,14 +40,13 @@ flowchart TB
     P2 --> N1
     P2 --> N3
     P2 --> U
-    N1 --> U
     N2 --> N1
     N2 --> I1
     N3 --> I1
     I1 --> D1
 ```
 
-Não há dependências circulares: `models` e `utils` não dependem de nenhum outro pacote do sistema (exceto `models` sobre `utils`), e `controllers` é o único pacote que conhece todos os demais.
+Não há dependências circulares: `models` e `utils` não dependem de nenhum outro pacote do sistema, e `controllers` é o único pacote que conhece todos os demais.
 
 ## Responsabilidade de cada pacote
 

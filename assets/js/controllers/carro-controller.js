@@ -34,7 +34,7 @@ try {
       <div class="col-lg-7"><div class="foto-detalhe" id="foto"></div></div>
       <div class="col-lg-5">
         <h1 class="mb-1">${esc(c.marca)} ${esc(c.modelo)}</h1>
-        <p class="etiqueta-preco d-inline-block">${formatarMoeda(c.diaria)} por dia</p>
+        <p class="etiqueta-preco d-inline-block mt-2">${formatarMoeda(c.diaria)} por dia</p>
         <p class="mt-2">Fim de semana (2 diárias): <strong>${formatarMoeda(c.diaria * 2)}</strong></p>
         <p>${esc(c.descricao)}</p>
         <dl class="ficha-tecnica">

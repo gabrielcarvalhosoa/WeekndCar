@@ -160,3 +160,49 @@ a:focus-visible, button:focus-visible {
   box-shadow: 0 0 0 2px var(--wc-cafe);
   transform: rotate(-45deg);
 }
+
+/* Acabamento: cantos retos, links e botões na paleta */
+:root {
+  --bs-border-radius: 0;
+  --bs-border-radius-sm: 0;
+  --bs-border-radius-lg: 0;
+  --bs-border-radius-xl: 0;
+  --bs-border-radius-xxl: 0;
+  --bs-link-color: #B3261E;
+  --bs-link-color-rgb: 179, 38, 30;
+  --bs-link-hover-color: #3B2A20;
+  --bs-link-hover-color-rgb: 59, 42, 32;
+}
+
+.navbar {
+  --bs-navbar-color: var(--wc-cafe);
+  --bs-navbar-hover-color: var(--wc-vermelho);
+  --bs-navbar-active-color: var(--wc-vermelho);
+}
+
+.btn-outline-danger {
+  --bs-btn-color: var(--wc-vermelho);
+  --bs-btn-border-color: var(--wc-vermelho);
+  --bs-btn-hover-bg: var(--wc-vermelho);
+  --bs-btn-hover-border-color: var(--wc-vermelho);
+  --bs-btn-active-bg: var(--wc-vermelho);
+  --bs-btn-active-border-color: var(--wc-vermelho);
+}
+
+.hero h1 { text-wrap: balance; max-width: 22ch; }
+
+.swiper {
+  --swiper-navigation-size: 16px;
+  --swiper-navigation-sides-offset: 8px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  margin-top: -40px;
+  background: var(--wc-creme);
+  border: 2px solid var(--wc-cafe);
+  color: var(--wc-cafe);
+}
+.swiper-button-prev::after,
+.swiper-button-next::after { font-weight: 700; }

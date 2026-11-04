@@ -67,7 +67,7 @@ async function carregar() {
 }
 
 function desenhar() {
-  $("quem").textContent = `${agente.razaoSocial}, ${agente.tipo === "banco" ? "banco" : "empresa"}.`;
+  $("quem").textContent = `${agente.razaoSocial} (${agente.tipo === "banco" ? "banco" : "empresa"})`;
   const lista = filtros();
   $("filtros").innerHTML = lista
     .map(([chave, nome, teste]) => `<button type="button" class="btn btn-filtro" data-filtro="${chave}" aria-pressed="${chave === filtro}">${nome} (${dados.pedidos.filter(teste).length})</button>`)
