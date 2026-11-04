@@ -482,11 +482,11 @@ curl 'http://localhost:3000/pedidos?status=pendente'
 
 Ainda não há testes automatizados. Nesta etapa, a validação é manual, seguindo as histórias do usuário em [`docs/historias-de-usuario.md`](./docs/historias-de-usuario.md):
 
-- [ ] Catálogo carrega do JSON Server, filtra por categoria e mostra o carrossel
-- [ ] Página do carro mostra os dados, o resumo da Wikipedia e o mapa de retirada
+- [x] Catálogo carrega do JSON Server, filtra por categoria e mostra o carrossel
+- [x] Página do carro mostra os dados, o resumo da Wikipedia e o mapa de retirada
 - [ ] Cadastro de cliente preenche o endereço pelo CEP e recusa CPF inválido ou repetido
 - [ ] Login libera as telas conforme o perfil e redireciona quem não tem acesso
-- [ ] Cliente cria, altera e cancela pedido; a previsão do tempo aparece
+- [x] Cliente cria, altera e cancela pedido; a previsão do tempo aparece
 - [ ] Um carro não aceita dois pedidos no mesmo fim de semana
 - [ ] Agente assume, modifica, aprova ou recusa pedidos e executa o contrato
 - [ ] Banco concede crédito sobre um contrato executado
@@ -516,7 +516,7 @@ Evolução prevista: testes unitários das regras de status com **Vitest** ou **
 
 | 👤 Nome | :octocat: GitHub | 💼 LinkedIn | 📤 E-mail |
 |---------|-----------------|-------------|-----------|
-| Gabriel | [@seu-usuario](https://github.com/seu-usuario) | [seu-perfil](https://www.linkedin.com/in/seu-perfil) | seu-email@exemplo.com |
+| Gabriel Carvalho Soares | [@gabrielcarvalhosoa](https://github.com/gabrielcarvalhosoa) | [Gabriel Carvalho](https://www.linkedin.com/in/gabrielcarvalhocomp) | seu-email@exemplo.com |
 
 > [!TIP]
 > 💡 **Dica:** substitua os dados acima pelos seus e inclua os demais integrantes do grupo, se houver.
