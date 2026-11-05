@@ -10,14 +10,8 @@
       "endereco": "Rua da Bahia, 1200, Centro, Belo Horizonte, MG",
       "profissao": "Arquiteta",
       "rendimentos": [
-        {
-          "entidadeEmpregadora": "Estúdio Alterosa Arquitetura",
-          "valor": 9500
-        },
-        {
-          "entidadeEmpregadora": "Prefeitura de Belo Horizonte",
-          "valor": 3200
-        }
+        { "entidadeEmpregadora": "Estúdio Alterosa Arquitetura", "valor": 9500 },
+        { "entidadeEmpregadora": "Prefeitura de Belo Horizonte", "valor": 3200 }
       ]
     },
     {
@@ -30,10 +24,7 @@
       "endereco": "Av. Afonso Pena, 3000, Savassi, Belo Horizonte, MG",
       "profissao": "Engenheiro de software",
       "rendimentos": [
-        {
-          "entidadeEmpregadora": "Mineira Tech",
-          "valor": 14000
-        }
+        { "entidadeEmpregadora": "Mineira Tech", "valor": 14000 }
       ]
     }
   ],
@@ -269,20 +260,8 @@
       "dataRetirada": "2026-11-07",
       "dataDevolucao": "2026-11-08",
       "valorTotal": 3400,
-      "status": "em_analise",
-      "criadoEm": "2026-11-02T10:00:00-03:00",
-      "agenteId": 1,
-      "historico": [
-        {
-          "status": "pendente",
-          "em": "2026-11-02T10:00:00-03:00"
-        },
-        {
-          "status": "em_analise",
-          "em": "2026-11-03T10:09:12.807Z",
-          "nota": "Análise financeira iniciada"
-        }
-      ]
+      "status": "pendente",
+      "criadoEm": "2026-11-02T10:00:00-03:00"
     },
     {
       "id": 2,
@@ -294,38 +273,6 @@
       "valorTotal": 3600,
       "status": "contrato_executado",
       "criadoEm": "2026-10-19T15:30:00-03:00"
-    },
-    {
-      "clienteId": 1,
-      "carroId": 6,
-      "dataRetirada": "2026-11-07",
-      "dataDevolucao": "2026-11-08",
-      "valorTotal": 4000,
-      "status": "pendente",
-      "criadoEm": "2026-11-03T10:21:26.573Z",
-      "historico": [
-        {
-          "status": "pendente",
-          "em": "2026-11-03T10:21:26.573Z"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "clienteId": 1,
-      "carroId": 5,
-      "dataRetirada": "2026-11-07",
-      "dataDevolucao": "2026-11-08",
-      "valorTotal": 3600,
-      "status": "pendente",
-      "criadoEm": "2026-11-04T20:55:01.417Z",
-      "historico": [
-        {
-          "status": "pendente",
-          "em": "2026-11-04T20:55:01.417Z"
-        }
-      ],
-      "id": 4
     }
   ],
   "contratos": [

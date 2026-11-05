@@ -26,7 +26,7 @@
 
 ## 🚧 Status do Projeto
 
-🛠️ **Em desenvolvimento** — modelagem concluída e protótipo funcional (catálogo, pedidos, painel do agente e mapa); faltam os prints e a revisão final.
+✅ **Concluído** — modelagem e protótipo funcional (catálogo, pedidos, painel do agente e mapa de retirada), entregues como Laboratório 02.
 
 ![Versão](https://img.shields.io/badge/Versão-v0.1.0-blue?style=for-the-badge) ![HTML5](https://img.shields.io/badge/HTML5-007ec6?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-007ec6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-007ec6?style=for-the-badge&logo=javascript&logoColor=white) ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-007ec6?style=for-the-badge&logo=bootstrap&logoColor=white) ![JSON Server](https://img.shields.io/badge/JSON_Server-0.17.4-007ec6?style=for-the-badge&logo=json&logoColor=white) ![Licença](https://img.shields.io/badge/Licença-MIT-007ec6?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
 
@@ -47,9 +47,8 @@
   - [Como Executar a Aplicação](#-como-executar-a-aplicação)
 - [Deploy](#-deploy)
 - [Estrutura de Pastas](#-estrutura-de-pastas)
-- [Demonstração](#-demonstração)
-  - [Aplicação Web](#-aplicação-web)
-  - [Exemplo de saída no Terminal (API)](#-exemplo-de-saída-no-terminal-api)
+- [Aplicação Web](#-aplicação-web)
+- [Exemplo de Saída no Terminal (API)](#-exemplo-de-saída-no-terminal-api)
 - [Testes](#-testes)
 - [Documentações utilizadas](#-documentações-utilizadas)
 - [Autores](#-autores)
@@ -60,8 +59,8 @@
 ---
 
 ## 🔗 Links Úteis
-* 🌐 **Demo Online:** _a definir (ex.: GitHub Pages ou Vercel para o front-end)_
-  > 💻 **Descrição:** o front-end é estático e pode ser publicado; a API (JSON Server) roda localmente nesta etapa do laboratório.
+* 🌐 **Demo Online:** não publicada; o projeto roda localmente (veja [Como Executar a Aplicação](#-como-executar-a-aplicação)).
+  > 💻 **Descrição:** o front-end é estático e poderia ser publicado, mas a API (JSON Server) roda localmente nesta etapa do laboratório.
 * 📖 **Documentação:** [Modelagem UML na pasta `docs/`](./docs)
   > 📚 **Descrição:** casos de uso, histórias do usuário, diagramas de classes, pacotes e componentes.
 * 📘 **Template deste README:** [template_README.md](https://github.com/joaopauloaramuni/desenvolvimento-de-interfaces-web/blob/main/TEMPLATES/template_README.md)
@@ -279,7 +278,7 @@ A única configuração é a URL base da API, definida em `assets/js/api/api-cli
 1. **Clone o repositório:**
 
 ```bash
-git clone <URL_DO_SEU_REPOSITÓRIO>
+git clone https://github.com/gabrielcarvalhosoa/WeekndCar.git
 cd weekndcar
 ```
 
@@ -393,30 +392,25 @@ Nesta etapa do laboratório, o sistema roda localmente. Para publicar:
 │       ├── /external            # 🌐 ViaCEP, Open-Meteo e Wikipedia.
 │       └── /utils               # 🔤 Funções de texto sem dependências.
 │
-└── /docs                        # 📚 Modelagem UML (casos de uso, histórias, classes, pacotes e componentes).
+└── /docs                        # 📚 Modelagem UML (casos de uso, histórias, classes, pacotes e componentes) e roteiro da apresentação.
 ```
 
 ---
 
-## 🎥 Demonstração
-
-> [!WARNING]
-> Prints e GIFs ainda não foram adicionados. Substitua os espaços reservados abaixo por imagens hospedadas na pasta `docs/img/` ou no GitHub Pages.
-
-### 🌐 Aplicação Web
+## 🌐 Aplicação Web
 
 | Tela | Captura de Tela |
 | :---: | :---: |
 | **Página Inicial (Catálogo)** | **Detalhe do Carro** |
-| _Print aqui_ | _Print aqui_ |
+| <img width="1763" height="2840" alt="pagina_inicial" src="https://github.com/user-attachments/assets/a4b9b3df-d0bc-4ac4-b5d3-3df56b02fdb6" /> | <img width="1763" height="1711" alt="detalhes_do_carro" src="https://github.com/user-attachments/assets/b4b1fe27-adc9-40f5-93c6-7a47651c2bcb" /> |
 | **Cadastro de Cliente** | **Login** |
-| _Print aqui_ | _Print aqui_ |
+| <img width="1763" height="1105" alt="cadastro" src="https://github.com/user-attachments/assets/85950d1a-b4d7-4b19-a9de-a054c6cc35fa" /> | <img width="1763" height="844" alt="login" src="https://github.com/user-attachments/assets/1ee397e7-ccfb-45bd-b8bc-42bd4469dde7" /> |
 | **Novo Pedido (com previsão do tempo)** | **Meus Pedidos (status)** |
-| _Print aqui_ | _Print aqui_ |
+| <img width="1763" height="844" alt="novo_pedido" src="https://github.com/user-attachments/assets/954ae466-620f-4bce-bced-1bfd32b4155b" /> | <img width="1763" height="1065" alt="meus_pedidos" src="https://github.com/user-attachments/assets/c9ffd9e5-9d62-4160-b223-21f0604c3666" /> |
 | **Painel do Agente** | **Mapa de Retirada** |
-| _Print aqui_ | _Print aqui_ |
+| <img width="1763" height="874" alt="painel_do_agente" src="https://github.com/user-attachments/assets/60eef409-9e44-4bda-83e7-4c6fb11594bb" /> | <img width="1652" height="547" alt="mapa_retirada" src="https://github.com/user-attachments/assets/1704279b-11ba-4800-8a1e-fac9df7f1fdf" /> |
 
-### 💻 Exemplo de Saída no Terminal (API)
+## 💻 Exemplo de Saída no Terminal (API)
 
 #### 1. Inicialização da API
 
@@ -517,9 +511,6 @@ Evolução prevista: testes unitários das regras de status com **Vitest** ou **
 | 👤 Nome | :octocat: GitHub | 💼 LinkedIn | 📤 E-mail |
 |---------|-----------------|-------------|-----------|
 | Gabriel Carvalho Soares | [@gabrielcarvalhosoa](https://github.com/gabrielcarvalhosoa) | [Gabriel Carvalho](https://www.linkedin.com/in/gabrielcarvalhocomp) | gabrielcarvalhosoa@gmail.com |
-
-> [!TIP]
-> 💡 **Dica:** substitua os dados acima pelos seus e inclua os demais integrantes do grupo, se houver.
 
 ---
 
