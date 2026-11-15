@@ -526,7 +526,6 @@ Evolução prevista: testes unitários das regras de status com **Vitest** ou **
 
 ## 🙏 Agradecimentos
 
-* [**Engenharia de Software PUC Minas**](https://www.instagram.com/engsoftwarepucminas/) - Pelo apoio institucional e estrutura acadêmica.
 * [**Prof. Dr. João Paulo Aramuni**](https://github.com/joaopauloaramuni) - Pelo enunciado, pelo template de documentação e pelos ensinamentos em **Desenvolvimento de Interfaces Web**.
 
 ---
